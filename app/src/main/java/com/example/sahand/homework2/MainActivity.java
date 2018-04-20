@@ -3,26 +3,50 @@ package com.example.sahand.homework2;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.Intent;
 import android.icu.util.Calendar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity
         implements DatePickerDialog.OnDateSetListener{
-    private EditText editText;
+    private EditText dateField;
+    private EditText nameField;
+    private EditText ageField;
+    private EditText emailField;
+    private EditText usernameField;
+    private TextView validMessage;
+    private String vMsg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        editText = findViewById(R.id.date_field);
+        dateField = findViewById(R.id.date_field);
+        nameField = findViewById(R.id.name_field);
+        ageField = findViewById(R.id.age_field);
+        emailField = findViewById(R.id.email_field);
+        usernameField = findViewById(R.id.username_field);
+        validMessage = findViewById(R.id.validation_text);
+
+        if(savedInstanceState != null) {
+            validMessage.setText(savedInstanceState.getString("vMsg"));
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState){
+        savedInstanceState.putString("vMsg", validMessage.getText().toString());
+
+        super.onSaveInstanceState(savedInstanceState);
     }
 
     public void showDatePickerDialog(View v) {
@@ -30,16 +54,50 @@ public class MainActivity extends AppCompatActivity
         newFragment.show(getFragmentManager(), "datePicker");
     }
 
-    public void onDateSet(DatePicker view, int year, int month, int day) {
-        // Do something with the date chosen by the user
-        editText.setText(String.format(Locale.ENGLISH, "%1$d/%2$d/%3$d", month,day,year));
+    public void submitForm(View v) {
+
+        if(ageField.getText().toString().length() == 0 | nameField.getText().toString().length() == 0
+                | usernameField.getText().toString().length() == 0 | emailField.getText().toString().length() == 0
+                | dateField.getText().toString().length() == 0) {
+            validMessage.setText("One or more fields are empty");
+        }
+        else if(!isEighteen(dateField.getText().toString())){
+            validMessage.setText("You must enter a valid date of birth and be over 18 to enter");
+        }
+        else {
+            Intent intent = new Intent(this, SecondaryActivity.class);
+            intent.putExtra("USER", usernameField.getText().toString());
+            startActivity(intent);
+        }
     }
 
-//    //called when Cat button is pressed
-//    public void showHi(View view){
-//        TextView textView = findViewById(R.id.hi_text);
-//        textView.setVisibility(View.VISIBLE);
-//    }
+    public boolean isEighteen(String string) {
+        String DOB[] = string.split("/");
+        if(DOB.length == 3) {
+            int month = Integer.parseInt(DOB[0]);
+            int day = Integer.parseInt(DOB[1]);
+            int year = Integer.parseInt(DOB[2]);
+
+            LocalDate today = LocalDate.now();
+
+            if(day < 1 | day > 31 | month < 1 | month > 12 | year < 1880 | year > today.getYear())
+                return false;
+
+            LocalDate birthday = LocalDate.of(year, month, day);
+
+            Period p = Period.between(birthday, today);
+
+            return (p.getYears() >= 18);
+        }
+        else {
+            return false;
+        }
+    }
+
+    public void onDateSet(DatePicker view, int year, int month, int day) {
+        // Do something with the date chosen by the user
+        dateField.setText(String.format(Locale.ENGLISH, "%1$d/%2$d/%3$d", month+1,day,year));
+    }
 
     public static class DatePickerFragment extends DialogFragment {
 

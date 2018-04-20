@@ -8,4 +8,6 @@
     <string name="name">Name</string>
     <string name="date_picker">Date Picker</string>
     <string name="field_hint">Enter Text</string>
+    <string name="age_label">Age</string>
+    <string name="back">Back</string>
 </resources>
