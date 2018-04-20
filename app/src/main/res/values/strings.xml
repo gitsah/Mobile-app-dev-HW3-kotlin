@@ -10,4 +10,6 @@
     <string name="field_hint">Enter Text</string>
     <string name="age_label">Age</string>
     <string name="back">Back</string>
+    <string name="emptyFields">One or more fields are empty</string>
+    <string name="underEighteen">You must enter a valid date of birth and be over 18 to enter</string>
 </resources>

@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity
     private EditText emailField;
     private EditText usernameField;
     private TextView validMessage;
-    private String vMsg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,10 +58,10 @@ public class MainActivity extends AppCompatActivity
         if(ageField.getText().toString().length() == 0 | nameField.getText().toString().length() == 0
                 | usernameField.getText().toString().length() == 0 | emailField.getText().toString().length() == 0
                 | dateField.getText().toString().length() == 0) {
-            validMessage.setText("One or more fields are empty");
+            validMessage.setText(R.string.emptyFields);
         }
         else if(!isEighteen(dateField.getText().toString())){
-            validMessage.setText("You must enter a valid date of birth and be over 18 to enter");
+            validMessage.setText(R.string.underEighteen);
         }
         else {
             Intent intent = new Intent(this, SecondaryActivity.class);
