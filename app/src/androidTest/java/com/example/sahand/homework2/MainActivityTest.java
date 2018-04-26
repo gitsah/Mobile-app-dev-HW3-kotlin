@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 
+import com.example.sahand.homework3.MainActivity;
+import com.example.sahand.homework3.R;
+
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
@@ -35,65 +38,6 @@ public class MainActivityTest {
 
     @Test
     public void mainActivityTest() {
-//        ViewInteraction appCompatEditText = onView(
-//                allOf(withId(R.id.name_field),
-//                        childAtPosition(
-//                                childAtPosition(
-//                                        withId(android.R.id.content),
-//                                        0),
-//                                11),
-//                        isDisplayed()));
-//        appCompatEditText.perform(replaceText("Sahn"), closeSoftKeyboard());
-//
-//        ViewInteraction appCompatEditText2 = onView(
-//                allOf(withId(R.id.name_field), withText("Sahn"),
-//                        childAtPosition(
-//                                childAtPosition(
-//                                        withId(android.R.id.content),
-//                                        0),
-//                                11),
-//                        isDisplayed()));
-//        appCompatEditText2.perform(click());
-//
-//        ViewInteraction appCompatEditText3 = onView(
-//                allOf(withId(R.id.name_field), withText("Sahn"),
-//                        childAtPosition(
-//                                childAtPosition(
-//                                        withId(android.R.id.content),
-//                                        0),
-//                                11),
-//                        isDisplayed()));
-//        appCompatEditText3.perform(replaceText("Sahand Milanin"));
-//
-//        ViewInteraction appCompatEditText4 = onView(
-//                allOf(withId(R.id.name_field), withText("Sahand Milanin"),
-//                        childAtPosition(
-//                                childAtPosition(
-//                                        withId(android.R.id.content),
-//                                        0),
-//                                11),
-//                        isDisplayed()));
-//        appCompatEditText4.perform(closeSoftKeyboard());
-//
-//        ViewInteraction appCompatEditText5 = onView(
-//                allOf(withId(R.id.name_field), withText("Sahand Milanin"),
-//                        childAtPosition(
-//                                childAtPosition(
-//                                        withId(android.R.id.content),
-//                                        0),
-//                                11),
-//                        isDisplayed()));
-//        appCompatEditText5.perform(click());
-//
-//        ViewInteraction appCompatEditText6 = onView(
-//                allOf(withId(R.id.name_field), withText("Sahand Milanin"),
-//                        childAtPosition(
-//                                childAtPosition(
-//                                        withId(android.R.id.content),
-//                                        0),
-//                                11),
-//                        isDisplayed()));
-
         ViewInteraction appCompatEditText = onView(
                 allOf(withId(R.id.name_field),
                         childAtPosition(
@@ -183,27 +127,6 @@ public class MainActivityTest {
                                 1),
                         isDisplayed()));
         appCompatButton2.perform(click());
-
-//        ViewInteraction editText = onView(
-//                allOf(withId(R.id.name_field), withText(""),
-//                        childAtPosition(
-//                                childAtPosition(
-//                                        withId(android.R.id.content),
-//                                        0),
-//                                2),
-//                        isDisplayed()));
-//        editText.check(matches(withText("")));
-//
-//        ViewInteraction editText2 = onView(
-//                allOf(withId(R.id.username_field), withText(""),
-//                        childAtPosition(
-//                                childAtPosition(
-//                                        withId(android.R.id.content),
-//                                        0),
-//                                6),
-//                        isDisplayed()));
-//        editText2.check(matches(withText("")));
-
     }
 
     private static Matcher<View> childAtPosition(

@@ -1,10 +1,12 @@
-package com.example.sahand.homework2;
+package com.example.sahand.homework3;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+//import com.example.sahand.homework3.R;
 
 public class SecondaryActivity extends AppCompatActivity {
     private TextView welcomeMessage;

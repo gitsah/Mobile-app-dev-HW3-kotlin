@@ -1,4 +1,4 @@
-package com.example.sahand.homework2;
+package com.example.sahand.homework3;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+
+//import com.example.sahand.homework3.R;
 
 import java.time.LocalDate;
 import java.time.Period;
