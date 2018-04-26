@@ -1,4 +1,4 @@
-package com.example.sahand.homework2;
+package com.example.sahand.homework3;
 
 
 import android.support.test.espresso.ViewInteraction;
@@ -8,9 +8,6 @@ import android.test.suitebuilder.annotation.LargeTest;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
-
-import com.example.sahand.homework3.MainActivity;
-import com.example.sahand.homework3.R;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
