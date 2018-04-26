@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity
     private EditText ageField;
     private EditText emailField;
     private EditText usernameField;
+    private EditText tester;
     private TextView validMessage;
 
     @Override
