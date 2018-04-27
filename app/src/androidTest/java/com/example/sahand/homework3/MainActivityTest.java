@@ -51,6 +51,6 @@ public class MainActivityTest {
         onView(withId(R.id.submit_button)).perform(click());
         onView(withId(R.id.textView)).check(matches(isDisplayed()));
         onView(withId(R.id.button)).perform(click());
-        onView(withId(R.id.name_field)).check(matches(withText(R.string.field_hint)));
+        onView(withId(R.id.name_field)).check(matches(withText("")));
     }
 }

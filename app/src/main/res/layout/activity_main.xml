@@ -98,7 +98,7 @@
 
         <EditText
             android:id="@+id/date_of_birth_field"
-            android:layout_width="wrap_content"
+            android:layout_width="85dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
@@ -112,7 +112,7 @@
             android:layout_weight="1"
             android:onClick="showDatePickerDialog"
             android:text="@string/date_picker"
-            android:textSize="12sp" />
+            android:textSize="15sp" />
 
     </LinearLayout>
 
@@ -132,12 +132,14 @@
 
         <EditText
             android:id="@+id/description_field"
+            android:inputType="textMultiLine"
+            android:lines="8"
+            android:gravity="start"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:hint="@string/field_hint"
-            android:inputType="textImeMultiLine" />
+            android:hint="@string/field_hint" />
     </LinearLayout>
 
     <TextView
