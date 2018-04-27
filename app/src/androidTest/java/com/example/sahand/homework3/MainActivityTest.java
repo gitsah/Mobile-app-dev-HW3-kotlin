@@ -1,5 +1,6 @@
 package com.example.sahand.homework3;
 
+import android.app.Activity;
 import android.support.test.espresso.Espresso;
 import android.support.test.rule.ActivityTestRule;
 import org.junit.Rule;
