@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        dateField = findViewById(R.id.date_field);
+        dateField = findViewById(R.id.date_of_birth_field);
         nameField = findViewById(R.id.name_field);
         ageField = findViewById(R.id.age_field);
         emailField = findViewById(R.id.email_field);
@@ -57,9 +57,8 @@ public class MainActivity extends AppCompatActivity
 
     public void submitForm(View v) {
 
-        if(ageField.getText().toString().length() == 0 | nameField.getText().toString().length() == 0
-                | usernameField.getText().toString().length() == 0 | emailField.getText().toString().length() == 0
-                | dateField.getText().toString().length() == 0) {
+        if(nameField.getText().toString().length() == 0 | usernameField.getText().toString().length() == 0
+                | emailField.getText().toString().length() == 0 | dateField.getText().toString().length() == 0) {
             validMessage.setText(R.string.emptyFields);
         }
         else if(!isEighteen(dateField.getText().toString())){
