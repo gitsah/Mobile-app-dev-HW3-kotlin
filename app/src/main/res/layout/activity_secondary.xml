@@ -1,32 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/top_layou_secondary"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.sahand.homework3.SecondaryActivity">
 
-    <TextView
-        android:id="@+id/textView"
+    <ImageView
+        android:id="@+id/profile_picture_display"
         android:layout_width="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_height="180dp"
+        android:contentDescription="@string/profile_picture"
+        app:srcCompat="@drawable/dog_picture" />
+
+    <TextView
+        android:id="@+id/name_and_age_display"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.197" />
+        android:layout_marginBottom="10dp"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/occupation_display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/description_display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/back_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="83dp"
-        android:text="@string/back"
+        android:layout_gravity="center"
         android:onClick="toMain"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.268" />
+        android:text="@string/back" />
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

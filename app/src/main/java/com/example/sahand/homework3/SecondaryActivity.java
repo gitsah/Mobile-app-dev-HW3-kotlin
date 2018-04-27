@@ -9,24 +9,34 @@ import android.widget.TextView;
 //import com.example.sahand.homework3.R;
 
 public class SecondaryActivity extends AppCompatActivity {
-    private TextView welcomeMessage;
+    private TextView nameAndAge;
+    private TextView occupation;
+    private TextView description;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_secondary);
-        String username = getIntent().getStringExtra("USER");
-        welcomeMessage = findViewById(R.id.textView);
-        welcomeMessage.setText(String.format("Thanks for Signing Up %s!", username));
+        nameAndAge = findViewById(R.id.name_and_age_display);
+        nameAndAge.setText(getIntent().getStringExtra("NAMEANDAGE"));
+        occupation = findViewById(R.id.occupation_display);
+        occupation.setText(getIntent().getStringExtra("OCCUPATION"));
+        description = findViewById(R.id.description_display);
+        description.setText(getIntent().getStringExtra("DESCRIPTION"));
+
 
         if(savedInstanceState != null) {
-            welcomeMessage.setText(savedInstanceState.getString("TEXT"));
+            nameAndAge.setText(savedInstanceState.getString("NAMEANDAGE"));
+            occupation.setText(savedInstanceState.getString("OCCUPATION"));
+            description.setText(savedInstanceState.getString("DESCRIPTION"));
         }
     }
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState){
-        savedInstanceState.putString("TEXT", welcomeMessage.getText().toString());
+        savedInstanceState.putString("NAMEANDAGE", nameAndAge.getText().toString());
+        savedInstanceState.putString("OCCUPATION", occupation.getText().toString());
+        savedInstanceState.putString("DESCRIPTION", description.getText().toString());
 
         super.onSaveInstanceState(savedInstanceState);
     }

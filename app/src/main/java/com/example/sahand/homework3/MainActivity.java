@@ -25,7 +25,9 @@ public class MainActivity extends AppCompatActivity
     private EditText emailField;
     private EditText usernameField;
     private EditText descriptionField;
+    private EditText occupationField;
     private TextView validMessage;
+    private int age;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity
         nameField = findViewById(R.id.name_field);
         emailField = findViewById(R.id.email_field);
         usernameField = findViewById(R.id.username_field);
+        occupationField = findViewById(R.id.occupation_field);
         descriptionField = findViewById(R.id.description_field);
         validMessage = findViewById(R.id.validation_text);
 
@@ -59,15 +62,19 @@ public class MainActivity extends AppCompatActivity
 
         if(nameField.getText().toString().length() == 0 | usernameField.getText().toString().length() == 0
                 | emailField.getText().toString().length() == 0 | dateField.getText().toString().length() == 0
-                | descriptionField.getText().toString().length() == 0 ) {
+                | descriptionField.getText().toString().length() == 0 | occupationField.getText().toString().length() == 0 ) {
             validMessage.setText(R.string.emptyFields);
         }
         else if(!isEighteen(dateField.getText().toString())){
             validMessage.setText(R.string.underEighteen);
         }
         else {
+            String nameAndAge = nameField.getText().toString() + ", " + age;
+
             Intent intent = new Intent(this, SecondaryActivity.class);
-            intent.putExtra("USER", usernameField.getText().toString());
+            intent.putExtra("NAMEANDAGE", nameAndAge);
+            intent.putExtra("OCCUPATION", occupationField.getText().toString());
+            intent.putExtra("DESCRIPTION", descriptionField.getText().toString());
             startActivity(intent);
         }
     }
@@ -85,10 +92,10 @@ public class MainActivity extends AppCompatActivity
                 return false;
 
             LocalDate birthday = LocalDate.of(year, month, day);
-
             Period p = Period.between(birthday, today);
+            age = p.getYears();
 
-            return (p.getYears() >= 18);
+            return (age >= 18);
         }
         else {
             return false;

@@ -13,4 +13,6 @@
     <string name="emptyFields">One or more fields are empty</string>
     <string name="underEighteen">You must enter a valid date of birth and be over 18 to enter</string>
     <string name="personal_description">Personal Description</string>
+    <string name="occupation">Occupation</string>
+    <string name="profile_picture">profile picture</string>
 </resources>
