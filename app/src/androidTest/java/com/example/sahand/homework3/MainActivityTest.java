@@ -27,6 +27,7 @@ public class MainActivityTest {
         onView(withId(R.id.name_field)).perform(typeText("Steve L")).perform(closeSoftKeyboard());
         onView(withId(R.id.date_of_birth_field)).perform(typeText("02/10/2003")).perform(closeSoftKeyboard());
         onView(withId(R.id.username_field)).perform(typeText("SteveL")).perform(closeSoftKeyboard());
+        onView(withId(R.id.occupation_field)).perform(typeText("Waiter")).perform(closeSoftKeyboard());
         onView(withId(R.id.description_field)).perform(typeText("I'm a pretty cool dude")).perform(closeSoftKeyboard());
         onView(withId(R.id.email_field)).perform(typeText("jackson@gmail.com")).perform(closeSoftKeyboard());
         onView(withId(R.id.submit_button)).perform(click());
@@ -47,9 +48,10 @@ public class MainActivityTest {
         onView(withId(R.id.date_of_birth_field)).perform(typeText("01/20/1989")).perform(closeSoftKeyboard());
         onView(withId(R.id.email_field)).perform(typeText("JohnD@gmail.com")).perform(closeSoftKeyboard());
         onView(withId(R.id.username_field)).perform(typeText("JohnM")).perform(closeSoftKeyboard());
+        onView(withId(R.id.occupation_field)).perform(typeText("Carpenter")).perform(closeSoftKeyboard());
         onView(withId(R.id.description_field)).perform(typeText("I'm a pretty cool dude")).perform(closeSoftKeyboard());
         onView(withId(R.id.submit_button)).perform(click());
-        onView(withId(R.id.button)).perform(click());
+        onView(withId(R.id.back_button)).perform(click());
         onView(withId(R.id.name_field)).check(matches(withText("")));
     }
 }
