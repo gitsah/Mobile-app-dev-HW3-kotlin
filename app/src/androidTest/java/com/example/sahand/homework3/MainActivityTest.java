@@ -1,5 +1,6 @@
 package com.example.sahand.homework3;
 
+import android.support.test.espresso.Espresso;
 import android.support.test.rule.ActivityTestRule;
 import org.junit.Rule;
 import org.junit.Test;
@@ -21,6 +22,8 @@ public class MainActivityTest {
     @Test
     public void notEighteen() {
         onView(withId(R.id.name_field)).perform(typeText("Steve L")).perform(closeSoftKeyboard());
+        onView(withId(R.id.date_button)).perform(click());
+        Espresso.pressBack();
         onView(withId(R.id.date_of_birth_field)).perform(typeText("02/10/2003")).perform(closeSoftKeyboard());
         onView(withId(R.id.username_field)).perform(typeText("SteveL")).perform(closeSoftKeyboard());
         onView(withId(R.id.occupation_field)).perform(typeText("Waiter")).perform(closeSoftKeyboard());
