@@ -27,6 +27,7 @@ public class MainActivityTest {
         onView(withId(R.id.name_field)).perform(typeText("Steve L")).perform(closeSoftKeyboard());
         onView(withId(R.id.date_of_birth_field)).perform(typeText("02/10/2003")).perform(closeSoftKeyboard());
         onView(withId(R.id.username_field)).perform(typeText("SteveL")).perform(closeSoftKeyboard());
+        onView(withId(R.id.description_field)).perform(typeText("I'm a pretty cool dude")).perform(closeSoftKeyboard());
         onView(withId(R.id.email_field)).perform(typeText("jackson@gmail.com")).perform(closeSoftKeyboard());
         onView(withId(R.id.submit_button)).perform(click());
         onView(withId(R.id.validation_text)).check(matches(withText(R.string.underEighteen)));
@@ -34,17 +35,19 @@ public class MainActivityTest {
 
     @Test
     public void unfilledFields() {
-        onView(withId(R.id.date_of_birth_field)).perform(typeText("05/10/1967"));
-        onView(withId(R.id.email_field)).perform(typeText("jjj@gmail.com"));
+        onView(withId(R.id.date_of_birth_field)).perform(typeText("05/10/1967")).perform(closeSoftKeyboard());
+        onView(withId(R.id.email_field)).perform(typeText("jjj@gmail.com")).perform(closeSoftKeyboard());
         onView(withId(R.id.submit_button)).perform(click());
         onView(withId(R.id.validation_text)).check(matches(withText(R.string.emptyFields)));
     }
 
     @Test
     public void to2ndPageAndBack() {
-        onView(withId(R.id.name_field)).perform(typeText("John M"));
-        onView(withId(R.id.date_of_birth_field)).perform(typeText("01/20/1989"));
-        onView(withId(R.id.email_field)).perform(typeText("JohnD@gmail.com"));
+        onView(withId(R.id.name_field)).perform(typeText("John M")).perform(closeSoftKeyboard());
+        onView(withId(R.id.date_of_birth_field)).perform(typeText("01/20/1989")).perform(closeSoftKeyboard());
+        onView(withId(R.id.email_field)).perform(typeText("JohnD@gmail.com")).perform(closeSoftKeyboard());
+        onView(withId(R.id.username_field)).perform(typeText("JohnM")).perform(closeSoftKeyboard());
+        onView(withId(R.id.description_field)).perform(typeText("I'm a pretty cool dude")).perform(closeSoftKeyboard());
         onView(withId(R.id.submit_button)).perform(click());
         onView(withId(R.id.textView)).check(matches(isDisplayed()));
         onView(withId(R.id.button)).perform(click());
