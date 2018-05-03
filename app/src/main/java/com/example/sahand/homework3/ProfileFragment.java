@@ -34,6 +34,7 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        // Inflate the layout for this fragment and set it to a View variable
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
         TextView nameAndAge = view.findViewById(R.id.name_and_age_display);
@@ -45,7 +46,7 @@ public class ProfileFragment extends Fragment {
             description.setText(getArguments().getString(ARG_PARAM_DESCRIPTION));
             nameAndAge.setText(getArguments().getString(ARG_PARAM_NAMEANDAGE));
         }
-        // Inflate the layout for this fragment
+
         return view;
     }
 
