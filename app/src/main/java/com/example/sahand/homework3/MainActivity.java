@@ -59,8 +59,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
+    public void onRestart() {
+        super.onRestart();
         dateField.setText("");
         nameField.setText("");
         emailField.setText("");
