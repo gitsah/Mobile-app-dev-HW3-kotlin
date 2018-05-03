@@ -18,8 +18,6 @@ import android.widget.TextView;
  * create an instance of this fragment.
  */
 public class ProfileFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM_OCCUPATION = "occupation";
     private static final String ARG_PARAM_DESCRIPTION = "description";
     private static final String ARG_PARAM_NAMEANDAGE = "nameAndAge";
