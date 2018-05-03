@@ -58,6 +58,17 @@ public class MainActivity extends AppCompatActivity
         newFragment.show(getFragmentManager(), "datePicker");
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        dateField.setText("");
+        nameField.setText("");
+        emailField.setText("");
+        usernameField.setText("");
+        descriptionField.setText("");
+        occupationField.setText("");
+
+    }
     public void submitForm(View v) {
 
         if(nameField.getText().toString().length() == 0 | usernameField.getText().toString().length() == 0

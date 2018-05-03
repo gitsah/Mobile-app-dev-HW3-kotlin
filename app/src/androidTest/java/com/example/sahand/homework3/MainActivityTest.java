@@ -1,6 +1,5 @@
 package com.example.sahand.homework3;
 
-import android.app.Activity;
 import android.support.test.espresso.Espresso;
 import android.support.test.rule.ActivityTestRule;
 import org.junit.Rule;
@@ -9,6 +8,7 @@ import org.junit.Test;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
+import static android.support.test.espresso.action.ViewActions.swipeLeft;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
@@ -66,7 +66,9 @@ public class MainActivityTest {
         onView(withId(R.id.name_and_age_display)).check(matches(withText("John Michaels, 29")));
         onView(withId(R.id.occupation_display)).check(matches(withText("Carpenter")));
         onView(withId(R.id.description_display)).check(matches(withText("I'm a pretty cool dude")));
-        onView(withId(R.id.back_button)).perform(click());
+        swipeLeft();
+        swipeLeft();
+        Espresso.pressBack();
         onView(withId(R.id.name_field)).check(matches(withText("")));
         onView(withId(R.id.date_of_birth_field)).check(matches(withText("")));
         onView(withId(R.id.username_field)).check(matches(withText("")));
