@@ -12,8 +12,6 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 
-//import com.example.sahand.homework3.R;
-
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.Locale;
@@ -67,7 +65,6 @@ public class MainActivity extends AppCompatActivity
         usernameField.setText("");
         descriptionField.setText("");
         occupationField.setText("");
-
     }
     public void submitForm(View v) {
 

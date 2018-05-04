@@ -2,6 +2,7 @@ package com.example.sahand.homework3;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +31,7 @@ public class ProfileFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+    @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -46,8 +48,6 @@ public class ProfileFragment extends Fragment {
             description.setText(getArguments().getString(ARG_PARAM_DESCRIPTION));
             nameAndAge.setText(getArguments().getString(ARG_PARAM_NAMEANDAGE));
         }
-
         return view;
     }
-
 }
